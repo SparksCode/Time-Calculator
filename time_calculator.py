@@ -27,7 +27,6 @@ def add_time(start, duration, day=False):
     'Saturday': 5, 
     'Sunday': 6
   }
-  print(start + " - " + duration)
 
   #Find Minutes 
   try:
@@ -71,13 +70,12 @@ def add_time(start, duration, day=False):
       return "Day Error"
 
   #Build new_time and return
-  new_time = str(new_hour) + ":" + str(new_minutes).zfill(2) + " " + merediem
+  new_time = f"{str(new_hour)}:{str(new_minutes).zfill(2)} {merediem}"
   if day != False:
-    new_time += ", " + day
+    new_time += f", {day}"
   if days == 1:
     new_time += " (next day)"
   elif days > 1:
-    new_time += " (" + str(days) + " days later)"
+    new_time += f" ({str(days)} days later)"
 
-  print(new_time)
   return new_time
